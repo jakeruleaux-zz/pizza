@@ -6,8 +6,11 @@ function Pizza(pieSize, meat, veg) {
 }
 
 Pizza.prototype.vegCost = function() {
-  this.veg = {veg: ["peppers", "olives", "onion", "tomato", "mushroom", "pineapple", "spinach", "fresh basil", "pepperoncini"], += 1 };
+  var vegCount = veg.forEach(function() {
+  this.veg = vegCount;
   return this.veg;
+  console.log(veg);
+});
 }
 
 Pizza.prototype.meatCost = function() {
@@ -25,14 +28,14 @@ Pizza.prototype.pieBig = function() {
 
 
 Pizza.prototype.pizzaCost = function() {
-   this.price = this.meat + "1" ;
+   this.price = this.meat + this.veg + this. pieSize ;
    return this.price;
 
    console.log(price);
    console.log(this.price);
 
 }
-
+ // debugger
 // }
 console.log()
 
@@ -45,6 +48,8 @@ $(document).ready(function() {
   var pieSize = [];
   var meat = [];
   var veg = [];
+  console.log(veg);
+  console.log(meat);
 
 $("form#new-order").submit(function(event) {
   event.preventDefault();
@@ -66,17 +71,12 @@ $("form#new-order").submit(function(event) {
     console.log();
   });
 
-    console.log(veg);
   });
-
-  console.log(meat);
-  console.log(meat);
-var vegTotal = (newPizza.vegCost);
-$("#total").text(veg);
-
-var diameter = (newPizza.pieBig);
-$("#total").text(pieSize);
-var price = (newPizza.pizzaCost);
-$("#total").text(price);
+  // var vegTotal = (newPizza.vegCost);
+  // $("#total").text(veg);
+  var diameter = (newPizza.pieBig);
+  $("#total").text(pieSize);
+  // var price = (newPizza.pizzaCost);
+  // $("#total").text(price);
 });
 });
