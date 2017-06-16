@@ -5,29 +5,16 @@ function Pizza(pieSize, meat, veg) {
   this.price = 0;
 }
 
+Pizza.prototype.vegCost = function() {
+  this.veg = {veg: ["peppers", "olives", "onion", "tomato", "mushroom", "pineapple", "spinach", "fresh basil", "pepperoncini"], += 1 };
+  return this.veg;
+}
 
-// var price = {
-//   meat: "2",
-//   veg: "1",
-//   calC: function() {
-//     return this.meat + this.veg;
-//   }
-// };
+Pizza.prototype.meatCost = function() {
+  this.meat = "1";
+  return this.meat;
+}
 
- var smallPie = {pieSize: "small", price: 16.00};
- var largePie = {pieSize: "large", price: 18.00};
- var vegCost = {veg: ["peppers", "olives", "onion", "tomato", "mushroom", "pineapple", "spinach", "fresh basil", "pepperoncini"], price: 1.00 };
- var meatCost = {meat: ["pepperoni", "sausage", "salami", "candian bacon", "ground beef", "chicken"], price: 2.00 };
-
-var vegTopCost = "";
- for (var i = 0; i < vegCost.length; i += 1) {
-   vegTopCost = vegCost[i];
-// Pizza.prototype.pizzaCost = function() {
-//   meat = "2";
-//   veg = "1";
-//   this.price = meat + veg;
-//   return this.price;
-// }
 Pizza.prototype.pieBig = function() {
   if (this.pieSize === 16) {
     return this.pieSize = "16";
@@ -46,22 +33,22 @@ Pizza.prototype.pizzaCost = function() {
 
 }
 
-}
+// }
 console.log()
 
 ////////////////////////DO NOT CROSS////////////////////////////
 
 $(document).ready(function() {
 
+  var newPizza = new Pizza(pieSize, meat, veg);
+  console.log(Pizza);
+  var pieSize = [];
+  var meat = [];
+  var veg = [];
 
 $("form#new-order").submit(function(event) {
   event.preventDefault();
     // console.log(pieSize);
-    var pieSize = [];
-    var meat = [];
-    var veg = [];
-    var newPizza = new Pizza(pieSize, meat, veg);
-    console.log(Pizza);
 
   $("input:checkbox[name=size]:checked").each(function() {
     var size = $(this).val();
@@ -84,6 +71,8 @@ $("form#new-order").submit(function(event) {
 
   console.log(meat);
   console.log(meat);
+var vegTotal = (newPizza.vegCost);
+$("#total").text(veg);
 
 var diameter = (newPizza.pieBig);
 $("#total").text(pieSize);
