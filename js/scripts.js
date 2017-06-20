@@ -12,11 +12,10 @@ Pizza.prototype.vegCost = function() {
   }
 }
 
-Pizza.prototype.meatCost = function() {
-  this.meat = "1";
-  return this.meat;
-}
-
+//Pizza.prototype.meatCost = function() {
+//  this.meat = "1";
+//  return this.meat;
+//
 Pizza.prototype.pieBig = function() {
   if (this.pieSize === 16) {
     return this.pieSize = "16";
@@ -41,34 +40,36 @@ $(document).ready(function() {
   var meat = [];
   var veg = [];
   // console.log(veg);
-  console.log(meat);
+  console.log();
   var newPizza;
   $("form#new-order").submit(function(event) {
     event.preventDefault();
     // console.log(pieSize);
 
-    var newPizza = new Pizza(pieSize, meat, veg);
+    var newPizza = new Pizza(pieSize,veg, meat);
     $("input:checkbox[name=size]:checked").each(function() {
       var size = $(this).val();
       pieSize.push(size);
       console.log(size);
     });
     $("input:checkbox[name=meat]:checked").each(function() {
+
       var meatTop = $(this).val();
       meat.push(meatTop);
-      console.log(meat);
+      console.log();
       // });
       $("input:checkbox[name=veg]:checked").each(function() {
+        var veg = [];
         var vegTop = parseInt($(this).val());
         veg.push(vegTop);
         console.log(veg);
       });
     });
-    var vegTotal = (newPizza.vegCost);
-    $("#total").text(veg);
+//    var vegTotal = (newPizza.vegCost);
+//    $("#total").text(veg);
     var diameter = (newPizza.pieBig);
     $("#total").text(pieSize);
-    var price = (newPizza.pizzaCost);
-    $("#total").text(price);
+//    var price = (newPizza.pizzaCost);
+//    $("#total").text(price);
   });
 });
