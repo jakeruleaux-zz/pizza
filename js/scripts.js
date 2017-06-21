@@ -55,7 +55,7 @@ $(document).ready(function() {
     });
 
     var diameter = newPizza.pieBig();
-    $("#total").text("your total " + "$"+diameter);
+    $("#total").text(name  + ", Your total is " + "$"+diameter);
 
   });
 });
