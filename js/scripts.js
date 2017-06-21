@@ -5,19 +5,26 @@ function Pizza (pieSize, meat, veg) {
   this.price = 0;
   // console.log(pizzaCost);
 };
-Pizza.prototype.vegCost = function() {
-  for (var i = 0; i < veg.length; i += 1)
+// Pizza.protoype.vegCost = function() {
+//   this.veg = 2 * veg.length;
+//   return this.veg
+// }
+
+
+console.log(this.veg);
+
+ Pizza.prototype.vegCost = function() {
+  for (var i = 0; i < this.veg.length; i ++)
   this.veg = total += 1;
   return this.veg;
-  console.log(this.veg);
 };
-
-Pizza.prototype.meatCost = function() {
-  for (i = 0; i < meat.length; i += 1);
-  total += 2;
-  return total;
-  console.log(total);
-};
+//
+// Pizza.prototype.meatCost = function() {
+//   for (i = 0; i < meat.length; i += 1);
+//   total += 2;
+//   return total;
+//   console.log(total);
+// };
 
 Pizza.prototype.pieBig = function() {
   if (this.pieSize === 16) {
@@ -56,7 +63,7 @@ $(document).ready(function() {
     console.log(meat);
     console.log(veg);
     $("input:checkbox[name=size]:checked").each(function() {
-      var size = $(this).val();
+      var size = parseInt($(this).val());
       pieSize.push(size);
     });
     $("input:checkbox[name=meat]:checked").each(function() {
