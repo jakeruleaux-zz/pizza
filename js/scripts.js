@@ -5,13 +5,13 @@ function Pizza (pieSize, meat, veg) {
   this.price = 0;
   // console.log(pizzaCost);
 };
-// Pizza.prototype.vegCost = function() {
-//   for (var i = 0; i < veg.length; i += 1)
-//   this.veg = total += 1;
-//   return this.veg;
-//   console.log(this.veg);
-// };
-//
+Pizza.prototype.vegCost = function() {
+  for (var i = 0; i < veg.length; i += 1)
+  this.veg = total += 1;
+  return this.veg;
+  console.log(this.veg);
+};
+
 Pizza.prototype.meatCost = function() {
   for (i = 0; i < meat.length; i += 1);
   total += 2;
@@ -19,13 +19,13 @@ Pizza.prototype.meatCost = function() {
   console.log(total);
 };
 
-// Pizza.prototype.pieBig = function() {
-//   if (this.pieSize === 16) {
-//     return this.pieSize = 16;
-//   } else {
-//     return this.pieSize = 18;
-//   }
-// };
+Pizza.prototype.pieBig = function() {
+  if (this.pieSize === 16) {
+    return this.pieSize = 16;
+  } else {
+    return this.pieSize = 18;
+  }
+};
 
 // Pizza.prototype.toppingCost = function() {
 //   if (this.veg === 2) {
@@ -38,10 +38,10 @@ Pizza.prototype.meatCost = function() {
 //   };
 
 
-// Pizza.prototype.pizzaCost = function() {
-//   this.price = this.meat + this.veg + this.pieSize ;
-//   return this.price;
-// };
+Pizza.prototype.pizzaCost = function() {
+  this.price = this.meat + this.veg + this.pieSize ;
+  return this.price;
+};
 // debugger
 
 ////////////////////////DO NOT CROSS////////////////////////////
@@ -54,14 +54,15 @@ $(document).ready(function() {
     var veg = [];
     var newPizza = new Pizza(pieSize, meat, veg);
     console.log(meat);
+    console.log(veg);
     $("input:checkbox[name=size]:checked").each(function() {
       var size = $(this).val();
       pieSize.push(size);
     });
     $("input:checkbox[name=meat]:checked").each(function() {
-      var meatTop = $(this).val();
+      var meatTop = parseInt($(this).val());
       meat.push(meatTop);
-      console.log();
+      console.log(meatTop);
     });
     $("input:checkbox[name=veg]:checked").each(function() {
       var vegTop = parseInt($(this).val());
