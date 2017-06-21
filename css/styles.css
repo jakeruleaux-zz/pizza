@@ -3,3 +3,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.jumbotron {
+  background-color: inherit;
+  
+}

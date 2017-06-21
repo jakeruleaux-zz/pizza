@@ -1,22 +1,31 @@
 function Pizza (pieSize, meat, veg) {
-  this.pieSize = 0;
-  this.meat = 0;
-  this.veg = 0;
+  this.pieSize = pieSize;
+  this.meat = meat;
+  this.veg = veg;
   this.price = 0;
+  // console.log(pizzaCost);
 };
-Pizza.prototype.vegCost = function() {
-  if (this.veg === 2) {
-    return this.veg = "2";
-  }
+// Pizza.prototype.vegCost = function() {
+//   for (var i = 0; i < veg.length; i += 1)
+//   this.veg = total += 1;
+//   return this.veg;
+//   console.log(this.veg);
+// };
+//
+Pizza.prototype.meatCost = function() {
+  for (i = 0; i < meat.length; i += 1);
+  total += 2;
+  return total;
+  console.log(total);
 };
 
-Pizza.prototype.pieBig = function() {
-  if (this.pieSize === 16) {
-    return this.pieSize = "16";
-  } else {
-    return this.pieSize = "18";
-  }
-};
+// Pizza.prototype.pieBig = function() {
+//   if (this.pieSize === 16) {
+//     return this.pieSize = 16;
+//   } else {
+//     return this.pieSize = 18;
+//   }
+// };
 
 // Pizza.prototype.toppingCost = function() {
 //   if (this.veg === 2) {
@@ -30,47 +39,45 @@ Pizza.prototype.pieBig = function() {
 
 
 // Pizza.prototype.pizzaCost = function() {
-//   this.price = (this.meat + this.veg + this.pieSize) ;
+//   this.price = this.meat + this.veg + this.pieSize ;
 //   return this.price;
 // };
 // debugger
-// console.log()
 
 ////////////////////////DO NOT CROSS////////////////////////////
 
 $(document).ready(function() {
-
-  var pieSize = [];
-  var meat = [];
-  var veg = [];
-  //  var newPizza = new Pizza(pieSize,veg, meat);
-
-$("form#new-order").submit(function(event) {
+  $("form#new-order").submit(function(event) {
     event.preventDefault();
-
-    var newPizza = new Pizza(pieSize,veg, meat);
+    var pieSize = [];
+    var meat = [];
+    var veg = [];
+    var newPizza = new Pizza(pieSize, meat, veg);
+    console.log(meat);
     $("input:checkbox[name=size]:checked").each(function() {
       var size = $(this).val();
       pieSize.push(size);
-      console.log(size);
     });
     $("input:checkbox[name=meat]:checked").each(function() {
-        var meatTop = $(this).val();
-        meat.push(meatTop);
-        console.log();
+      var meatTop = $(this).val();
+      meat.push(meatTop);
+      console.log();
     });
     $("input:checkbox[name=veg]:checked").each(function() {
-        var vegTop = $(this).val();
-        veg.push(vegTop);
-        console.log(veg);
+      var vegTop = parseInt($(this).val());
+      veg.push(veg);
+      console.log(vegTop);
     });
 
-//    var vegTotal = (newPizza.vegCost);
-//    $("#total").text(veg);
-    var vegTotal = (newPizza.vegCost);
-    $("#total").text(veg);
+
+
+      // var cost = (newPizza.pizzaCost);
+      // $("#total").text.(price);
+    // var cost = (new)
+    // var vegTotal = (newPizza.toppingCost);
+    // $("#total").text(veg);
     var diameter = (newPizza.pieBig);
-    $("#total").text(pieSize);
+    $("#total").text("your total " + "$"+pieSize);
   //  var price = (newPizza.pizzaCost);
 //    $("#total").text(price);
   });
